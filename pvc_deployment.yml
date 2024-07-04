@@ -1,3 +1,7 @@
+
+
+
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -24,5 +28,6 @@ spec:
             - name: volumefored
               mountPath: "/etc/config"
       volumes:
-          PersistentVolumeClaim:
-          name: mypvc
+      - name: volumefored
+        PersistentVolumeClaim:
+          claimName: mypvc
